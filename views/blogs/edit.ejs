@@ -1,0 +1,22 @@
+<!-- views/edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <h1>Edit Blog Post</h1>
+    <div class="create-blog form">
+    <form action="/blogs/<%= post._id %>/edit" method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" value="<%= post.title %>"><br>
+        <label for="snippet">Snippet:</label><br>
+        <input type="text" id="snippet" name="snippet" value="<%= post.snippet %>"><br>
+        <label for="body">Body:</label><br>
+        <textarea id="body" name="body" rows="5"><%= post.body %></textarea><br>
+        <button type="submit">Update</button>
+        <button id="back" onclick="history.back()">Back</button>
+    </form>
+        
+    </div>
+</body>
+</html>
